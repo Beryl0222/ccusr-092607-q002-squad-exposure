@@ -21,8 +21,20 @@
       "enum": [
         "PROFILE_VERSIONED",
         "CLEARANCE_RECORDED",
+        "LOAD_RECORDED",
+        "COACH_ASSIGNED",
+        "POLICY_VERSIONED",
+        "EVENT_REGISTERED",
         "PROPOSAL_SUBMITTED",
+        "OBSERVATION_SUBMITTED",
+        "PROPOSAL_APPROVED",
+        "PROPOSAL_REJECTED",
         "SLOT_AWARDED",
+        "SLOT_CONSUMED",
+        "SLOT_RELEASED",
+        "WITHDRAWAL_RECORDED",
+        "LINEUP_FROZEN",
+        "CLOCK_ADVANCED",
         "REVIEW_PUBLISHED"
       ]
     },
@@ -32,7 +44,10 @@
         "athlete_profile",
         "competition_slot",
         "lineup_proposal",
-        "development_gap"
+        "development_gap",
+        "selection_policy",
+        "competition_event",
+        "simulation_clock"
       ]
     },
     "aggregate_id": {
@@ -52,13 +67,71 @@
     }
   },
   "payload_required_by_event": {
+    "PROFILE_VERSIONED": [
+      "profile"
+    ],
     "CLEARANCE_RECORDED": [
       "valid_until",
       "scope"
     ],
+    "LOAD_RECORDED": [
+      "load_index",
+      "as_of"
+    ],
+    "COACH_ASSIGNED": [
+      "coach_id"
+    ],
+    "POLICY_VERSIONED": [
+      "ruleset"
+    ],
+    "EVENT_REGISTERED": [
+      "event_level",
+      "entry_deadline",
+      "event_end",
+      "slots"
+    ],
+    "PROPOSAL_SUBMITTED": [
+      "event_ref",
+      "policy_version",
+      "data_snapshot",
+      "lineup"
+    ],
+    "OBSERVATION_SUBMITTED": [
+      "coach_id",
+      "athlete_id",
+      "note"
+    ],
+    "PROPOSAL_APPROVED": [
+      "approver_ids"
+    ],
+    "PROPOSAL_REJECTED": [
+      "reason"
+    ],
     "SLOT_AWARDED": [
       "policy_version",
-      "slot_ref"
+      "slot_ref",
+      "athlete_ids"
+    ],
+    "SLOT_CONSUMED": [
+      "slot_ref",
+      "used_for"
+    ],
+    "SLOT_RELEASED": [
+      "slot_ref",
+      "reason"
+    ],
+    "WITHDRAWAL_RECORDED": [
+      "athlete_id",
+      "reason",
+      "effective_from"
+    ],
+    "LINEUP_FROZEN": [
+      "lineup",
+      "proposal_ref"
+    ],
+    "CLOCK_ADVANCED": [
+      "to_time",
+      "reason"
     ],
     "REVIEW_PUBLISHED": [
       "evidence_cutoff",

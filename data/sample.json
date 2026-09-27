@@ -5,5 +5,13 @@
   "aggregate_id": "squad_exposure-001",
   "occurred_at": "2026-09-25T10:00:00+08:00",
   "version": 1,
-  "payload": {}
+  "payload": {
+    "profile": {
+      "result_score": 72,
+      "style_edges": {"lefty": 58},
+      "gap_needs": {"backhand": 1},
+      "pair_synergy": {},
+      "evidence": {"style_edges.lefty": 3}
+    }
+  }
 }
