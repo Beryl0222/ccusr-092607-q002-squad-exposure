@@ -21,18 +21,28 @@
       "enum": [
         "PROFILE_VERSIONED",
         "CLEARANCE_RECORDED",
+        "OBSERVATION_RECORDED",
+        "POLICY_PUBLISHED",
+        "EVENT_REGISTERED",
         "PROPOSAL_SUBMITTED",
+        "DECISION_RECORDED",
         "SLOT_AWARDED",
-        "REVIEW_PUBLISHED"
+        "SLOT_RELEASED",
+        "APPEARANCE_RECORDED",
+        "REVIEW_PUBLISHED",
+        "CLOCK_ADVANCED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
         "athlete_profile",
-        "competition_slot",
+        "policy",
+        "competition_event",
         "lineup_proposal",
-        "development_gap"
+        "competition_slot",
+        "development_gap",
+        "clock"
       ]
     },
     "aggregate_id": {
@@ -56,13 +66,46 @@
       "valid_until",
       "scope"
     ],
+    "OBSERVATION_RECORDED": [
+      "coach_id",
+      "observed_at"
+    ],
+    "POLICY_PUBLISHED": [
+      "policy_version",
+      "rules"
+    ],
+    "EVENT_REGISTERED": [
+      "event_level",
+      "entry_deadline",
+      "slots"
+    ],
+    "PROPOSAL_SUBMITTED": [
+      "event_ref",
+      "frozen_policy_version",
+      "entries"
+    ],
+    "DECISION_RECORDED": [
+      "decision",
+      "decided_by"
+    ],
     "SLOT_AWARDED": [
       "policy_version",
       "slot_ref"
     ],
+    "SLOT_RELEASED": [
+      "slot_ref",
+      "reason"
+    ],
+    "APPEARANCE_RECORDED": [
+      "slot_ref",
+      "result"
+    ],
     "REVIEW_PUBLISHED": [
       "evidence_cutoff",
       "gap_changes"
+    ],
+    "CLOCK_ADVANCED": [
+      "simulated_at"
     ]
   },
   "additionalProperties": false
